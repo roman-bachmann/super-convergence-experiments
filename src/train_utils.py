@@ -238,7 +238,7 @@ def train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=10
 
 
 def one_cycle(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=20, \
-              lr_min=1e-3, lr_max=1e-2, mom_min=0.85, mom_max=0.95, annealing_pct=0.1):
+              lr_min=1e-3, lr_max=1e-2, mom_min=0.85, mom_max=0.95, annealing_pct=0.1, verbose=0):
     annealing_epochs = int(epochs * annealing_pct)
     up_down_epochs = (epochs - annealing_epochs) // 2
 
@@ -248,21 +248,21 @@ def one_cycle(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=20, 
     print('##### Computing upcycle phase #####\n')
     curves_upcycle = train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, \
                                  epochs=up_down_epochs, lr_start=lr_min, lr_end=lr_max, \
-                                 mom_start=mom_max, mom_end=mom_min, verbose=2)
+                                 mom_start=mom_max, mom_end=mom_min, verbose=verbose)
     curves.append(curves_upcycle)
 
     # Downcycle
     print('##### Computing downcycle phase #####\n')
     curves_downcycle = train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, \
                                    epochs=up_down_epochs, lr_start=lr_max, lr_end=lr_min, \
-                                   mom_start=mom_min, mom_end=mom_max, verbose=2)
+                                   mom_start=mom_min, mom_end=mom_max, verbose=verbose)
     curves.append(curves_downcycle)
 
     # Annealing
     print('##### Computing annealing phase #####\n')
     curves_annealing = train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, \
                                    epochs=annealing_epochs, lr_start=lr_min, lr_end=lr_min/100, \
-                                   mom_start=mom_max, mom_end=mom_max, verbose=2)
+                                   mom_start=mom_max, mom_end=mom_max, verbose=verbose)
     curves.append(curves_annealing)
 
     print('All three phases done. Concatenating data.')
