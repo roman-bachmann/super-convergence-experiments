@@ -37,4 +37,4 @@ optimizer = Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), weight_decay=
 
 # Training the network
 train_outputs = train_model(model, dset_loaders, dset_sizes, criterion, optimizer, num_epochs=90, verbose=2)
-plot_learning_curves(train_outputs[0], train_outputs[1], train_outputs[2], train_outputs[3], description='standard_training')
+plot_learning_curves(train_outputs[0], train_outputs[1], train_outputs[2], train_outputs[3], description='adam')
