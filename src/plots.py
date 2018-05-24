@@ -49,6 +49,14 @@ def plot_learning_curves(train_losses, val_losses, train_accs, val_accs, descrip
         plt.show()
 
 def plot_lr_finder(learning_rates, losses, description=None):
+    '''
+    Plot the learning rate finder curves.
+
+    Args:
+        learning_rates (list[float]): List of learning rates
+        losses (list[float]): List of losses
+        description (string, optional): If given, saves plots under this file name
+    '''
     plt.figure(figsize=(8,4))
     plt.plot(learning_rates, losses)
     plt.xscale('log')
@@ -61,6 +69,13 @@ def plot_lr_finder(learning_rates, losses, description=None):
         plt.show()
 
 def plot_learning_rates(learning_rates, description=None):
+    '''
+    Plot the learning rate finder curves.
+
+    Args:
+        learning_rates (list[float]): List of learning rates
+        description (string, optional): If given, saves plots under this file name
+    '''
     plt.figure(figsize=(8,4))
     plt.plot(learning_rates)
     plt.xlabel('Batch iterations')
@@ -72,6 +87,13 @@ def plot_learning_rates(learning_rates, description=None):
         plt.show()
 
 def plot_momentums(momentums, description=None):
+    '''
+    Plot the momentums.
+
+    Args:
+        momentums (list[float]): List of momentums
+        description (string, optional): If given, saves plots under this file name
+    '''
     plt.figure(figsize=(8,4))
     plt.plot(momentums)
     plt.xlabel('Batch iterations')

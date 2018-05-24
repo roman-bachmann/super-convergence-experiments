@@ -3,7 +3,6 @@ from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
 from torch.optim import SGD
 import torch.backends.cudnn as cudnn
-from torch.autograd import Variable
 
 import torchvision
 import torchvision.transforms as transforms
@@ -14,6 +13,7 @@ import resnet
 from train_utils import one_cycle
 from plots import plot_learning_curves, plot_learning_rates, plot_momentums
 
+# CUDNN makes output non-deterministic but greatly improves performance
 cudnn.benchmark = True
 
 
@@ -30,8 +30,7 @@ dset_loaders = {'train': trainloader, 'val': testloader}
 dset_sizes = {'train': len(trainset.train_labels), 'val': len(testset.test_labels)}
 
 
-# Try different parameters
-# standard, more annealing, heavy boosting, moderate boosting, constant momentum, moderate boosting constant momentum, slow boosting, standard with annealing
+# Experimenting with different parameters around the baseline lr of 0.01 and momentum 0.9
 params = [{'lr_min': 0.001, 'lr_max': 0.01, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 90},
           {'lr_min': 0.001, 'lr_max': 0.01, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.5, 'epochs': 90},
           {'lr_min': 0.1, 'lr_max': 3, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 50},
@@ -54,6 +53,7 @@ for p in params:
                        lr_min=p['lr_min'], lr_max=p['lr_max'], mom_min=p['mom_min'],
                        mom_max=p['mom_max'], annealing_pct=p['annealing_pct'], verbose=2)
 
+    # Plotting the learning curves
     description = 'lrmin{}_lrmax{}_mmin{}_mmax{}_pct{}_e{}'.format(p['lr_min'], p['lr_max'],
                                                                    p['mom_min'], p['mom_max'],
                                                                    p['annealing_pct'], p['epochs'])

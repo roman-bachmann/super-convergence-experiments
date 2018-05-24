@@ -3,7 +3,6 @@ from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
 from torch.optim import SGD, Adam
 import torch.backends.cudnn as cudnn
-from torch.autograd import Variable
 
 import torchvision
 import torchvision.transforms as transforms
@@ -12,6 +11,7 @@ import resnet
 from train_utils import train_model
 from plots import plot_learning_curves
 
+# CUDNN makes output non-deterministic but greatly improves performance
 cudnn.benchmark = True
 
 

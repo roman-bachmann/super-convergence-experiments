@@ -8,11 +8,8 @@ def train_model(model, dset_loaders, dset_sizes, criterion, optimizer, \
                 num_epochs=25, verbose=2):
     """
     Method to train a PyTorch neural network with the given parameters for a
-    certain number of epochs. Keeps track of the model yielding the best validation
-    accuracy during training and returns that model before potential overfitting
-    starts happening.
-    Records and returns training and validation losses and accuracies over all
-    epochs.
+    certain number of epochs. Records and returns training and validation losses
+    and accuracies over all epochs.
 
     Args:
 
@@ -27,8 +24,6 @@ def train_model(model, dset_loaders, dset_sizes, criterion, optimizer, \
         criterion (PyTorch criterion): PyTorch criterion (e.g. CrossEntropyLoss)
 
         optimizer (PyTorch optimizer): PyTorch optimizer (e.g. Adam)
-
-        lr_scheduler (PyTorch learning rate scheduler, optional): PyTorch learning rate scheduler
 
         num_epochs (int): Number of epochs to train for
 
@@ -71,7 +66,6 @@ def train_model(model, dset_loaders, dset_sizes, criterion, optimizer, \
                 optimizer.zero_grad()
 
                 preds = model(inputs)
-
                 loss = criterion(preds, labels)
 
                 # Backward pass
@@ -108,6 +102,26 @@ def train_model(model, dset_loaders, dset_sizes, criterion, optimizer, \
 
 
 def lr_finder(model, trainloader, criterion, optimizer, lr_start=1e-8, lr_end=10):
+    '''
+    Method to find a good learning rate for a given dataset and model. Over one
+    epoch, learning rate increases linearly after each mini-batch and the training
+    loss is calculated. The function returns the losses with their corresponding
+    learning rate.
+
+    Args:
+
+        model (torch.nn.Module): The neural network model that should be trained.
+
+        trainloader (DataLoader): Dataloader for the training data
+
+        criterion (PyTorch criterion): PyTorch criterion (e.g. CrossEntropyLoss)
+
+        optimizer (PyTorch optimizer): PyTorch optimizer (e.g. Adam)
+
+        lr_start (float, optional): Learning rate to start with
+
+        lr_end (float, optional): Learning rate to end with
+    '''
     m = (lr_end / lr_start) ** (1 / (len(trainloader)-1))
 
     lr = lr_start
@@ -117,7 +131,6 @@ def lr_finder(model, trainloader, criterion, optimizer, lr_start=1e-8, lr_end=10
     lrs = []
     for batch_idx, data in enumerate(trainloader):
         inputs, labels = data
-        # Wrap inputs and labels in Variable
         if torch.cuda.is_available():
             inputs, labels = Variable(inputs.cuda()), \
                 Variable(labels.cuda())
@@ -146,6 +159,40 @@ def lr_finder(model, trainloader, criterion, optimizer, lr_start=1e-8, lr_end=10
 
 def train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=10,\
                 lr_start=1e-8, lr_end=10, mom_start=0.95, mom_end=0.85, verbose=0):
+    """
+    Conducts one training phase using the given model and dataset, while linearly
+    changing the learning rate and momentum from the start values to their respective
+    end values. The learning rate and momentum values get adapted after every
+    mini-batch.
+    Returns the training and validation accuracies and losses, as well as all
+    learning rates and momentums.
+
+    Args:
+
+        model (torch.nn.Module): The neural network model that should be trained.
+
+        dset_loaders (dict[string, DataLoader]): Dictionary containing the training
+            loader and test loader: {'train': trainloader, 'val': testloader}
+
+        dset_sizes (dict[string, int]): Dictionary containing the size of the training
+            and testing sets. {'train': train_set_size, 'val': test_set_size}
+
+        criterion (PyTorch criterion): PyTorch criterion (e.g. CrossEntropyLoss)
+
+        optimizer (PyTorch optimizer): PyTorch optimizer (e.g. Adam)
+
+        epochs (int): Number of epochs to train for
+
+        lr_start (float, optional): Learning rate to start with
+
+        lr_end (float, optional): Learning rate to end with
+
+        mom_start (float, optional): Momentum to start with
+
+        mom_end (float, optional): Momentum to end with
+
+        verbose (int): Verbosity level. 0 for none, 1 for small and 2 for heavy printouts
+    """
     batches_per_train_epoch = len(dset_loaders['train'])
     total_batches = batches_per_train_epoch * epochs
     step_lr = (lr_end - lr_start) / total_batches
@@ -194,7 +241,6 @@ def train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=10
                 optimizer.zero_grad()
 
                 preds = model(inputs)
-
                 loss = criterion(preds, labels)
 
                 # Backward pass
@@ -239,6 +285,44 @@ def train_phase(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=10
 
 def one_cycle(model, dset_loaders, dset_sizes, criterion, optimizer, epochs=20, \
               lr_min=1e-3, lr_max=1e-2, mom_min=0.85, mom_max=0.95, annealing_pct=0.1, verbose=0):
+    """
+    Conducts one whole super convergence cycle, where the learning rate gets linearly
+    ramped up to a maximum value after which it is decreased again to the original value.
+    The momentum starts high, gets adapted to the smallest value and returns to its
+    initial value.
+    A final learning rate annealing phase is added at the end with the specified
+    duration.
+    Returns the training and validation accuracies and losses, as well as all
+    learning rates and momentums.
+
+    Args:
+
+        model (torch.nn.Module): The neural network model that should be trained.
+
+        dset_loaders (dict[string, DataLoader]): Dictionary containing the training
+            loader and test loader: {'train': trainloader, 'val': testloader}
+
+        dset_sizes (dict[string, int]): Dictionary containing the size of the training
+            and testing sets. {'train': train_set_size, 'val': test_set_size}
+
+        criterion (PyTorch criterion): PyTorch criterion (e.g. CrossEntropyLoss)
+
+        optimizer (PyTorch optimizer): PyTorch optimizer (e.g. Adam)
+
+        epochs (int): Number of epochs to train for
+
+        lr_min (float, optional): Beginning and end learning rate
+
+        lr_max (float, optional): Peak learning rate
+
+        mom_min (float, optional): Lowest momentum
+
+        mom_max (float, optional): Beginning and end momentum
+
+        annealing_pct (float, optional): Percentage of epochs reserved for annealing
+
+        verbose (int): Verbosity level. 0 for none, 1 for small and 2 for heavy printouts
+    """
     annealing_epochs = int(epochs * annealing_pct)
     up_down_epochs = (epochs - annealing_epochs) // 2
 
