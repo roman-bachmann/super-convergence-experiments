@@ -1,8 +1,3 @@
-import time
-time.sleep(400*60)
-
-
-
 import torch
 from torch.utils.data import DataLoader
 from torch.nn import CrossEntropyLoss
@@ -12,6 +7,8 @@ from torch.autograd import Variable
 
 import torchvision
 import torchvision.transforms as transforms
+
+import numpy as np
 
 import resnet
 from train_utils import one_cycle
@@ -34,14 +31,15 @@ dset_sizes = {'train': len(trainset.train_labels), 'val': len(testset.test_label
 
 
 # Try different parameters
-# standard, more annealing, heavy boosting, moderate boosting, constant momentum, moderate boosting constant momentum, slow boosting
+# standard, more annealing, heavy boosting, moderate boosting, constant momentum, moderate boosting constant momentum, slow boosting, standard with annealing
 params = [{'lr_min': 0.001, 'lr_max': 0.01, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 90},
           {'lr_min': 0.001, 'lr_max': 0.01, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.5, 'epochs': 90},
           {'lr_min': 0.1, 'lr_max': 3, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 50},
           {'lr_min': 0.01, 'lr_max': 0.1, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 70},
           {'lr_min': 0.001, 'lr_max': 0.01, 'mom_min': 0.9, 'mom_max': 0.9, 'annealing_pct': 0.1, 'epochs': 90},
           {'lr_min': 0.01, 'lr_max': 0.1, 'mom_min': 0.9, 'mom_max': 0.9, 'annealing_pct': 0.1, 'epochs': 70},
-          {'lr_min': 0.001, 'lr_max': 0.1, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 90}]
+          {'lr_min': 0.001, 'lr_max': 0.1, 'mom_min': 0.85, 'mom_max': 0.95, 'annealing_pct': 0.1, 'epochs': 90},
+          {'lr_min': 0.01, 'lr_max': 0.01, 'mom_min': 0.9, 'mom_max': 0.9, 'annealing_pct': 0.1, 'epochs': 50}]
 for p in params:
 
     # Defining the model
@@ -68,3 +66,7 @@ for p in params:
                                                                            curves[1][-1],
                                                                            curves[2][-1],
                                                                            curves[3][-1]))
+
+    # Save all curves to disk for later plotting
+    for i in range(6):
+        np.save('../learning_curves/' + description + '-' + str(i), np.array(curves[i]))

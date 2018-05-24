@@ -1,0 +1,5084 @@
+roman@reverie:~$ cd Documents/super-convergence-experiments/src/
+roman@reverie:~/Documents/super-convergence-experiments/src$ source activate ml
+(ml) roman@reverie:~/Documents/super-convergence-experiments/src$ python super-convergence.py
+Files already downloaded and verified
+Files already downloaded and verified
+##### Computing upcycle phase #####
+
+Epoch 1/40
+----------
+THCudaCheck FAIL file=/opt/conda/conda-bld/pytorch_1512387374934/work/torch/lib/THC/generic/THCStorage.cu line=58 error=2 : out of memory
+Traceback (most recent call last):
+  File "super-convergence.py", line 52, in <module>
+    mom_max=p['mom_max'], annealing_pct=p['annealing_pct'], verbose=2)
+  File "/home/roman/Documents/super-convergence-experiments/src/train_utils.py", line 251, in one_cycle
+    mom_start=mom_max, mom_end=mom_min, verbose=verbose)
+  File "/home/roman/Documents/super-convergence-experiments/src/train_utils.py", line 196, in train_phase
+    preds = model(inputs)
+  File "/home/roman/miniconda3/envs/ml/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/roman/Documents/super-convergence-experiments/src/resnet.py", line 88, in forward
+    out = self.layer1(out)
+  File "/home/roman/miniconda3/envs/ml/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/roman/miniconda3/envs/ml/lib/python3.6/site-packages/torch/nn/modules/container.py", line 67, in forward
+    input = module(input)
+  File "/home/roman/miniconda3/envs/ml/lib/python3.6/site-packages/torch/nn/modules/module.py", line 325, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/roman/Documents/super-convergence-experiments/src/resnet.py", line 33, in forward
+    out = F.relu(out)
+  File "/home/roman/miniconda3/envs/ml/lib/python3.6/site-packages/torch/nn/functional.py", line 583, in relu
+    return threshold(input, 0, 0, inplace)
+RuntimeError: cuda runtime error (2) : out of memory at /opt/conda/conda-bld/pytorch_1512387374934/work/torch/lib/THC/generic/THCStorage.cu:58
+(ml) roman@reverie:~/Documents/super-convergence-experiments/src$ python super-convergence.py
+Files already downloaded and verified
+Files already downloaded and verified
+##### Computing upcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0119, acc: 0.4431
+val loss: 0.0098, acc: 0.5415
+
+Epoch 2/40
+----------
+train loss: 0.0077, acc: 0.6489
+val loss: 0.0074, acc: 0.6641
+
+Epoch 3/40
+----------
+train loss: 0.0058, acc: 0.7379
+val loss: 0.0076, acc: 0.6718
+
+Epoch 4/40
+----------
+train loss: 0.0045, acc: 0.8018
+val loss: 0.0063, acc: 0.7213
+
+Epoch 5/40
+----------
+train loss: 0.0035, acc: 0.8455
+val loss: 0.0075, acc: 0.7033
+
+Epoch 6/40
+----------
+train loss: 0.0027, acc: 0.8816
+val loss: 0.0064, acc: 0.7385
+
+Epoch 7/40
+----------
+train loss: 0.0020, acc: 0.9155
+val loss: 0.0059, acc: 0.7702
+
+Epoch 8/40
+----------
+train loss: 0.0015, acc: 0.9368
+val loss: 0.0062, acc: 0.7665
+
+Epoch 9/40
+----------
+train loss: 0.0011, acc: 0.9516
+val loss: 0.0075, acc: 0.7554
+
+Epoch 10/40
+----------
+train loss: 0.0009, acc: 0.9613
+val loss: 0.0066, acc: 0.7734
+
+Epoch 11/40
+----------
+train loss: 0.0008, acc: 0.9642
+val loss: 0.0077, acc: 0.7487
+
+Epoch 12/40
+----------
+train loss: 0.0005, acc: 0.9774
+val loss: 0.0063, acc: 0.7899
+
+Epoch 13/40
+----------
+train loss: 0.0003, acc: 0.9859
+val loss: 0.0065, acc: 0.7887
+
+Epoch 14/40
+----------
+train loss: 0.0003, acc: 0.9871
+val loss: 0.0080, acc: 0.7717
+
+Epoch 15/40
+----------
+train loss: 0.0004, acc: 0.9851
+val loss: 0.0070, acc: 0.7884
+
+Epoch 16/40
+----------
+train loss: 0.0004, acc: 0.9805
+val loss: 0.0078, acc: 0.7756
+
+Epoch 17/40
+----------
+train loss: 0.0006, acc: 0.9755
+val loss: 0.0072, acc: 0.7722
+
+Epoch 18/40
+----------
+train loss: 0.0003, acc: 0.9870
+val loss: 0.0072, acc: 0.7854
+
+Epoch 19/40
+----------
+train loss: 0.0002, acc: 0.9950
+val loss: 0.0063, acc: 0.8067
+
+Epoch 20/40
+----------
+train loss: 0.0001, acc: 0.9972
+val loss: 0.0064, acc: 0.8103
+
+Epoch 21/40
+----------
+train loss: 0.0000, acc: 0.9989
+val loss: 0.0059, acc: 0.8232
+
+Epoch 22/40
+----------
+train loss: 0.0000, acc: 0.9999
+val loss: 0.0057, acc: 0.8272
+
+Epoch 23/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0054, acc: 0.8332
+
+Epoch 24/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0054, acc: 0.8342
+
+Epoch 25/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0053, acc: 0.8329
+
+Epoch 26/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0053, acc: 0.8329
+
+Epoch 27/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0052, acc: 0.8346
+
+Epoch 28/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8353
+
+Epoch 29/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8358
+
+Epoch 30/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8367
+
+Epoch 31/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8353
+
+Epoch 32/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0050, acc: 0.8353
+
+Epoch 33/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0050, acc: 0.8358
+
+Epoch 34/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8336
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8358
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8357
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8335
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8357
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8356
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8356
+
+Training complete in 37m 29s
+
+##### Computing downcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8356
+
+Epoch 2/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8339
+
+Epoch 3/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8338
+
+Epoch 4/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8362
+
+Epoch 5/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8335
+
+Epoch 6/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8343
+
+Epoch 7/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8343
+
+Epoch 8/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8339
+
+Epoch 9/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8349
+
+Epoch 10/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8342
+
+Epoch 11/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8353
+
+Epoch 12/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8353
+
+Epoch 13/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8357
+
+Epoch 14/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8365
+
+Epoch 15/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8338
+
+Epoch 16/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8348
+
+Epoch 17/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8342
+
+Epoch 18/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8353
+
+Epoch 19/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8359
+
+Epoch 20/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8360
+
+Epoch 21/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8356
+
+Epoch 22/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8354
+
+Epoch 23/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Epoch 24/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8368
+
+Epoch 25/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Epoch 26/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8349
+
+Epoch 27/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8349
+
+Epoch 28/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8362
+
+Epoch 29/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8362
+
+Epoch 30/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8375
+
+Epoch 31/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8366
+
+Epoch 32/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8355
+
+Epoch 33/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8358
+
+Epoch 34/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8349
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8341
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8348
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8362
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8349
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8327
+
+Training complete in 37m 27s
+
+##### Computing annealing phase #####
+
+Epoch 1/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Epoch 2/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Epoch 3/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8332
+
+Epoch 4/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8361
+
+Epoch 5/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8347
+
+Epoch 6/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8333
+
+Epoch 7/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8362
+
+Epoch 8/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8335
+
+Epoch 9/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8343
+
+Training complete in 8m 25s
+
+All three phases done. Concatenating data.
+Traceback (most recent call last):
+  File "super-convergence.py", line 61, in <module>
+    p['annealing_pct'], p['epoch'])
+KeyError: 'epoch'
+(ml) roman@reverie:~/Documents/super-convergence-experiments/src$ python super-convergence.py
+^CTraceback (most recent call last):
+  File "super-convergence.py", line 2, in <module>
+    time.sleep(250*60)
+KeyboardInterrupt
+(ml) roman@reverie:~/Documents/super-convergence-experiments/src$ python super-convergence.py
+Files already downloaded and verified
+Files already downloaded and verified
+##### Computing upcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0120, acc: 0.4338
+val loss: 0.0104, acc: 0.5193
+
+Epoch 2/40
+----------
+train loss: 0.0078, acc: 0.6399
+val loss: 0.0082, acc: 0.6326
+
+Epoch 3/40
+----------
+train loss: 0.0059, acc: 0.7351
+val loss: 0.0064, acc: 0.7191
+
+Epoch 4/40
+----------
+train loss: 0.0046, acc: 0.7954
+val loss: 0.0067, acc: 0.7216
+
+Epoch 5/40
+----------
+train loss: 0.0035, acc: 0.8447
+val loss: 0.0075, acc: 0.7116
+
+Epoch 6/40
+----------
+train loss: 0.0027, acc: 0.8824
+val loss: 0.0067, acc: 0.7338
+
+Epoch 7/40
+----------
+train loss: 0.0020, acc: 0.9113
+val loss: 0.0057, acc: 0.7771
+
+Epoch 8/40
+----------
+train loss: 0.0015, acc: 0.9373
+val loss: 0.0058, acc: 0.7840
+
+Epoch 9/40
+----------
+train loss: 0.0012, acc: 0.9486
+val loss: 0.0063, acc: 0.7709
+
+Epoch 10/40
+----------
+train loss: 0.0009, acc: 0.9618
+val loss: 0.0070, acc: 0.7701
+
+Epoch 11/40
+----------
+train loss: 0.0007, acc: 0.9696
+val loss: 0.0068, acc: 0.7806
+
+Epoch 12/40
+----------
+train loss: 0.0006, acc: 0.9775
+val loss: 0.0078, acc: 0.7614
+
+Epoch 13/40
+----------
+train loss: 0.0005, acc: 0.9774
+val loss: 0.0067, acc: 0.7898
+
+Epoch 14/40
+----------
+train loss: 0.0005, acc: 0.9800
+val loss: 0.0094, acc: 0.7253
+
+Epoch 15/40
+----------
+train loss: 0.0004, acc: 0.9841
+val loss: 0.0069, acc: 0.7922
+
+Epoch 16/40
+----------
+train loss: 0.0002, acc: 0.9911
+val loss: 0.0068, acc: 0.7931
+
+Epoch 17/40
+----------
+train loss: 0.0003, acc: 0.9863
+val loss: 0.0080, acc: 0.7686
+
+Epoch 18/40
+----------
+train loss: 0.0003, acc: 0.9885
+val loss: 0.0069, acc: 0.7895
+
+Epoch 19/40
+----------
+train loss: 0.0003, acc: 0.9894
+val loss: 0.0069, acc: 0.7971
+
+Epoch 20/40
+----------
+train loss: 0.0003, acc: 0.9895
+val loss: 0.0075, acc: 0.7842
+
+Epoch 21/40
+----------
+train loss: 0.0003, acc: 0.9860
+val loss: 0.0069, acc: 0.7941
+
+Epoch 22/40
+----------
+train loss: 0.0003, acc: 0.9889
+val loss: 0.0070, acc: 0.7935
+
+Epoch 23/40
+----------
+train loss: 0.0002, acc: 0.9903
+val loss: 0.0064, acc: 0.8109
+
+Epoch 24/40
+----------
+train loss: 0.0002, acc: 0.9939
+val loss: 0.0064, acc: 0.8140
+
+Epoch 25/40
+----------
+train loss: 0.0001, acc: 0.9961
+val loss: 0.0061, acc: 0.8163
+
+Epoch 26/40
+----------
+train loss: 0.0001, acc: 0.9979
+val loss: 0.0058, acc: 0.8226
+
+Epoch 27/40
+----------
+train loss: 0.0000, acc: 0.9995
+val loss: 0.0057, acc: 0.8258
+
+Epoch 28/40
+----------
+train loss: 0.0000, acc: 0.9999
+val loss: 0.0053, acc: 0.8372
+
+Epoch 29/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8387
+
+Epoch 30/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8414
+
+Epoch 31/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8411
+
+Epoch 32/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0049, acc: 0.8417
+
+Epoch 33/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8413
+
+Epoch 34/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8423
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8422
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8419
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8422
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8426
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8439
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8450
+
+Training complete in 37m 30s
+
+##### Computing downcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8438
+
+Epoch 2/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8452
+
+Epoch 3/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8427
+
+Epoch 4/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8449
+
+Epoch 5/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8435
+
+Epoch 6/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8449
+
+Epoch 7/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8428
+
+Epoch 8/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8448
+
+Epoch 9/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8445
+
+Epoch 10/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8446
+
+Epoch 11/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8426
+
+Epoch 12/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8441
+
+Epoch 13/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8455
+
+Epoch 14/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8440
+
+Epoch 15/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8445
+
+Epoch 16/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8439
+
+Epoch 17/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8454
+
+Epoch 18/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8465
+
+Epoch 19/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8440
+
+Epoch 20/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8428
+
+Epoch 21/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8443
+
+Epoch 22/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8448
+
+Epoch 23/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8450
+
+Epoch 24/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8435
+
+Epoch 25/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8435
+
+Epoch 26/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8436
+
+Epoch 27/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8447
+
+Epoch 28/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8451
+
+Epoch 29/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8453
+
+Epoch 30/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8438
+
+Epoch 31/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8442
+
+Epoch 32/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8438
+
+Epoch 33/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8456
+
+Epoch 34/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8462
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8436
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8441
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8436
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8446
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8446
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8435
+
+Training complete in 37m 29s
+
+##### Computing annealing phase #####
+
+Epoch 1/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8452
+
+Epoch 2/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8447
+
+Epoch 3/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8447
+
+Epoch 4/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8433
+
+Epoch 5/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8424
+
+Epoch 6/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8429
+
+Epoch 7/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8445
+
+Epoch 8/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8451
+
+Epoch 9/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8436
+
+Training complete in 8m 26s
+
+All three phases done. Concatenating data.
+lrmin0.001_lrmax0.01_mmin0.85_mmax0.95_pct0.1_e90
+train loss: 7.827383547555656e-06, val loss: 0.004218118491768837, train acc: 1.0, val_acc:0.8436
+##### Computing upcycle phase #####
+
+Epoch 1/22
+----------
+train loss: 0.0119, acc: 0.4425
+val loss: 0.0098, acc: 0.5431
+
+Epoch 2/22
+----------
+train loss: 0.0077, acc: 0.6506
+val loss: 0.0076, acc: 0.6637
+
+Epoch 3/22
+----------
+train loss: 0.0056, acc: 0.7469
+val loss: 0.0075, acc: 0.6730
+
+Epoch 4/22
+----------
+train loss: 0.0043, acc: 0.8101
+val loss: 0.0058, acc: 0.7511
+
+Epoch 5/22
+----------
+train loss: 0.0033, acc: 0.8548
+val loss: 0.0068, acc: 0.7185
+
+Epoch 6/22
+----------
+train loss: 0.0026, acc: 0.8834
+val loss: 0.0060, acc: 0.7552
+
+Epoch 7/22
+----------
+train loss: 0.0019, acc: 0.9170
+val loss: 0.0069, acc: 0.7449
+
+Epoch 8/22
+----------
+train loss: 0.0014, acc: 0.9392
+val loss: 0.0062, acc: 0.7773
+
+Epoch 9/22
+----------
+train loss: 0.0011, acc: 0.9508
+val loss: 0.0067, acc: 0.7684
+
+Epoch 10/22
+----------
+train loss: 0.0008, acc: 0.9656
+val loss: 0.0060, acc: 0.7909
+
+Epoch 11/22
+----------
+train loss: 0.0007, acc: 0.9696
+val loss: 0.0080, acc: 0.7469
+
+Epoch 12/22
+----------
+train loss: 0.0005, acc: 0.9771
+val loss: 0.0065, acc: 0.7853
+
+Epoch 13/22
+----------
+train loss: 0.0005, acc: 0.9812
+val loss: 0.0085, acc: 0.7534
+
+Epoch 14/22
+----------
+train loss: 0.0005, acc: 0.9801
+val loss: 0.0077, acc: 0.7701
+
+Epoch 15/22
+----------
+train loss: 0.0004, acc: 0.9813
+val loss: 0.0072, acc: 0.7740
+
+Epoch 16/22
+----------
+train loss: 0.0003, acc: 0.9870
+val loss: 0.0084, acc: 0.7532
+
+Epoch 17/22
+----------
+train loss: 0.0003, acc: 0.9883
+val loss: 0.0071, acc: 0.7934
+
+Epoch 18/22
+----------
+train loss: 0.0002, acc: 0.9926
+val loss: 0.0065, acc: 0.8012
+
+Epoch 19/22
+----------
+train loss: 0.0001, acc: 0.9948
+val loss: 0.0084, acc: 0.7630
+
+Epoch 20/22
+----------
+train loss: 0.0001, acc: 0.9956
+val loss: 0.0065, acc: 0.8105
+
+Epoch 21/22
+----------
+train loss: 0.0001, acc: 0.9983
+val loss: 0.0063, acc: 0.8111
+
+Epoch 22/22
+----------
+train loss: 0.0001, acc: 0.9978
+val loss: 0.0062, acc: 0.8225
+
+Training complete in 20m 38s
+
+##### Computing downcycle phase #####
+
+Epoch 1/22
+----------
+train loss: 0.0000, acc: 0.9988
+val loss: 0.0063, acc: 0.8195
+
+Epoch 2/22
+----------
+train loss: 0.0000, acc: 0.9994
+val loss: 0.0057, acc: 0.8301
+
+Epoch 3/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0053, acc: 0.8356
+
+Epoch 4/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0052, acc: 0.8392
+
+Epoch 5/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0051, acc: 0.8385
+
+Epoch 6/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0050, acc: 0.8400
+
+Epoch 7/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0050, acc: 0.8401
+
+Epoch 8/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0049, acc: 0.8404
+
+Epoch 9/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8405
+
+Epoch 10/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8407
+
+Epoch 11/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8394
+
+Epoch 12/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8406
+
+Epoch 13/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0047, acc: 0.8407
+
+Epoch 14/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8407
+
+Epoch 15/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8425
+
+Epoch 16/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8420
+
+Epoch 17/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8425
+
+Epoch 18/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8416
+
+Epoch 19/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8404
+
+Epoch 20/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8421
+
+Epoch 21/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8416
+
+Epoch 22/22
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8417
+
+Training complete in 20m 38s
+
+##### Computing annealing phase #####
+
+Epoch 1/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8425
+
+Epoch 2/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8414
+
+Epoch 3/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8423
+
+Epoch 4/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8424
+
+Epoch 5/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8426
+
+Epoch 6/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8430
+
+Epoch 7/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8417
+
+Epoch 8/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8422
+
+Epoch 9/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8418
+
+Epoch 10/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8427
+
+Epoch 11/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8421
+
+Epoch 12/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8415
+
+Epoch 13/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8430
+
+Epoch 14/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8424
+
+Epoch 15/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8412
+
+Epoch 16/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8422
+
+Epoch 17/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8433
+
+Epoch 18/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8432
+
+Epoch 19/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8419
+
+Epoch 20/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8427
+
+Epoch 21/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8429
+
+Epoch 22/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8419
+
+Epoch 23/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8422
+
+Epoch 24/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8428
+
+Epoch 25/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8414
+
+Epoch 26/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8420
+
+Epoch 27/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8419
+
+Epoch 28/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8431
+
+Epoch 29/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8446
+
+Epoch 30/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8436
+
+Epoch 31/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8431
+
+Epoch 32/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8421
+
+Epoch 33/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8416
+
+Epoch 34/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8432
+
+Epoch 35/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8436
+
+Epoch 36/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8430
+
+Epoch 37/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8432
+
+Epoch 38/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8427
+
+Epoch 39/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8424
+
+Epoch 40/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8425
+
+Epoch 41/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8429
+
+Epoch 42/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8419
+
+Epoch 43/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8430
+
+Epoch 44/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8422
+
+Epoch 45/45
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8435
+
+Training complete in 42m 11s
+
+All three phases done. Concatenating data.
+lrmin0.001_lrmax0.01_mmin0.85_mmax0.95_pct0.5_e90
+train loss: 7.218500092858449e-06, val loss: 0.004352097445726394, train acc: 1.0, val_acc:0.8435
+##### Computing upcycle phase #####
+
+Epoch 1/22
+----------
+train loss: 0.0127, acc: 0.4083
+val loss: 0.0107, acc: 0.4936
+
+Epoch 2/22
+----------
+train loss: 0.0090, acc: 0.5897
+val loss: 0.0111, acc: 0.4971
+
+Epoch 3/22
+----------
+train loss: 0.0076, acc: 0.6598
+val loss: 0.0178, acc: 0.3752
+
+Epoch 4/22
+----------
+train loss: 0.0075, acc: 0.6670
+val loss: 0.0163, acc: 0.3850
+
+Epoch 5/22
+----------
+train loss: 0.0076, acc: 0.6631
+val loss: 0.0376, acc: 0.2734
+
+Epoch 6/22
+----------
+train loss: 0.0078, acc: 0.6553
+val loss: 0.0220, acc: 0.3139
+
+Epoch 7/22
+----------
+train loss: 0.0082, acc: 0.6441
+val loss: 0.0098, acc: 0.5754
+
+Epoch 8/22
+----------
+train loss: 0.0083, acc: 0.6325
+val loss: 0.0170, acc: 0.3605
+
+Epoch 9/22
+----------
+train loss: 0.0087, acc: 0.6183
+val loss: 0.0113, acc: 0.5344
+
+Epoch 10/22
+----------
+train loss: 0.0088, acc: 0.6122
+val loss: 0.0136, acc: 0.4507
+
+Epoch 11/22
+----------
+train loss: 0.0092, acc: 0.5920
+val loss: 0.0165, acc: 0.3774
+
+Epoch 12/22
+----------
+train loss: 0.0096, acc: 0.5791
+val loss: 0.0130, acc: 0.4320
+
+Epoch 13/22
+----------
+train loss: 0.0094, acc: 0.5816
+val loss: 0.0187, acc: 0.4115
+
+Epoch 14/22
+----------
+train loss: 0.0096, acc: 0.5726
+val loss: 0.0167, acc: 0.3206
+
+Epoch 15/22
+----------
+train loss: 0.0099, acc: 0.5610
+val loss: 0.0144, acc: 0.3976
+
+Epoch 16/22
+----------
+train loss: 0.0101, acc: 0.5506
+val loss: 0.0176, acc: 0.3844
+
+Epoch 17/22
+----------
+train loss: 0.0105, acc: 0.5356
+val loss: 0.0228, acc: 0.2570
+
+Epoch 18/22
+----------
+train loss: 0.0107, acc: 0.5258
+val loss: 0.0319, acc: 0.2513
+
+Epoch 19/22
+----------
+train loss: 0.0125, acc: 0.4280
+val loss: 0.0193, acc: 0.3220
+
+Epoch 20/22
+----------
+train loss: 0.0115, acc: 0.4814
+val loss: 0.0211, acc: 0.2524
+
+Epoch 21/22
+----------
+train loss: 0.0116, acc: 0.4789
+val loss: 0.0143, acc: 0.3672
+
+Epoch 22/22
+----------
+train loss: 0.0114, acc: 0.4879
+val loss: 0.0389, acc: 0.1000
+
+Training complete in 20m 14s
+
+##### Computing downcycle phase #####
+
+Epoch 1/22
+----------
+train loss: 0.0115, acc: 0.4835
+val loss: 0.0274, acc: 0.1557
+
+Epoch 2/22
+----------
+train loss: 0.0117, acc: 0.4738
+val loss: 0.0161, acc: 0.2534
+
+Epoch 3/22
+----------
+train loss: 0.0114, acc: 0.4872
+val loss: 0.0185, acc: 0.1963
+
+Epoch 4/22
+----------
+train loss: 0.0114, acc: 0.4846
+val loss: 0.0221, acc: 0.2210
+
+Epoch 5/22
+----------
+train loss: 0.0116, acc: 0.4743
+val loss: 0.0255, acc: 0.2381
+
+Epoch 6/22
+----------
+train loss: 0.0116, acc: 0.4688
+val loss: 0.0134, acc: 0.3917
+
+Epoch 7/22
+----------
+train loss: 0.0112, acc: 0.4864
+val loss: 0.0183, acc: 0.2682
+
+Epoch 8/22
+----------
+train loss: 0.0112, acc: 0.4916
+val loss: 0.0197, acc: 0.3477
+
+Epoch 9/22
+----------
+train loss: 0.0111, acc: 0.4959
+val loss: 0.0212, acc: 0.2808
+
+Epoch 10/22
+----------
+train loss: 0.0110, acc: 0.5016
+val loss: 0.0146, acc: 0.4428
+
+Epoch 11/22
+----------
+train loss: 0.0107, acc: 0.5162
+val loss: 0.0220, acc: 0.2525
+
+Epoch 12/22
+----------
+train loss: 0.0106, acc: 0.5184
+val loss: 0.0182, acc: 0.3282
+
+Epoch 13/22
+----------
+train loss: 0.0105, acc: 0.5243
+val loss: 0.0227, acc: 0.2186
+
+Epoch 14/22
+----------
+train loss: 0.0103, acc: 0.5378
+val loss: 0.0390, acc: 0.1826
+
+Epoch 15/22
+----------
+train loss: 0.0100, acc: 0.5473
+val loss: 0.0170, acc: 0.3104
+
+Epoch 16/22
+----------
+train loss: 0.0099, acc: 0.5546
+val loss: 0.0255, acc: 0.2006
+
+Epoch 17/22
+----------
+train loss: 0.0094, acc: 0.5733
+val loss: 0.0251, acc: 0.2685
+
+Epoch 18/22
+----------
+train loss: 0.0091, acc: 0.5864
+val loss: 0.0178, acc: 0.3934
+
+Epoch 19/22
+----------
+train loss: 0.0088, acc: 0.6039
+val loss: 0.0120, acc: 0.4706
+
+Epoch 20/22
+----------
+train loss: 0.0084, acc: 0.6226
+val loss: 0.0126, acc: 0.4602
+
+Epoch 21/22
+----------
+train loss: 0.0079, acc: 0.6468
+val loss: 0.0148, acc: 0.4081
+
+Epoch 22/22
+----------
+train loss: 0.0068, acc: 0.6939
+val loss: 0.0073, acc: 0.6744
+
+Training complete in 20m 3s
+
+##### Computing annealing phase #####
+
+Epoch 1/5
+----------
+train loss: 0.0060, acc: 0.7292
+val loss: 0.0083, acc: 0.6336
+
+Epoch 2/5
+----------
+train loss: 0.0057, acc: 0.7476
+val loss: 0.0067, acc: 0.7062
+
+Epoch 3/5
+----------
+train loss: 0.0051, acc: 0.7701
+val loss: 0.0060, acc: 0.7373
+
+Epoch 4/5
+----------
+train loss: 0.0046, acc: 0.7975
+val loss: 0.0054, acc: 0.7632
+
+Epoch 5/5
+----------
+train loss: 0.0036, acc: 0.8410
+val loss: 0.0050, acc: 0.7869
+
+Training complete in 4m 33s
+
+All three phases done. Concatenating data.
+lrmin0.1_lrmax3_mmin0.85_mmax0.95_pct0.1_e50
+train loss: 0.0036321291875839232, val loss: 0.0049793228298425675, train acc: 0.84098, val_acc:0.7869
+##### Computing upcycle phase #####
+
+Epoch 1/31
+----------
+train loss: 0.0107, acc: 0.5025
+val loss: 0.0087, acc: 0.6069
+
+Epoch 2/31
+----------
+train loss: 0.0066, acc: 0.7028
+val loss: 0.0074, acc: 0.6787
+
+Epoch 3/31
+----------
+train loss: 0.0049, acc: 0.7801
+val loss: 0.0057, acc: 0.7531
+
+Epoch 4/31
+----------
+train loss: 0.0039, acc: 0.8249
+val loss: 0.0054, acc: 0.7661
+
+Epoch 5/31
+----------
+train loss: 0.0032, acc: 0.8567
+val loss: 0.0056, acc: 0.7601
+
+Epoch 6/31
+----------
+train loss: 0.0026, acc: 0.8827
+val loss: 0.0048, acc: 0.8002
+
+Epoch 7/31
+----------
+train loss: 0.0022, acc: 0.9027
+val loss: 0.0051, acc: 0.7911
+
+Epoch 8/31
+----------
+train loss: 0.0019, acc: 0.9175
+val loss: 0.0056, acc: 0.7811
+
+Epoch 9/31
+----------
+train loss: 0.0016, acc: 0.9296
+val loss: 0.0053, acc: 0.8003
+
+Epoch 10/31
+----------
+train loss: 0.0014, acc: 0.9362
+val loss: 0.0060, acc: 0.7815
+
+Epoch 11/31
+----------
+train loss: 0.0013, acc: 0.9400
+val loss: 0.0053, acc: 0.7964
+
+Epoch 12/31
+----------
+train loss: 0.0012, acc: 0.9447
+val loss: 0.0059, acc: 0.7854
+
+Epoch 13/31
+----------
+train loss: 0.0012, acc: 0.9476
+val loss: 0.0061, acc: 0.7843
+
+Epoch 14/31
+----------
+train loss: 0.0012, acc: 0.9481
+val loss: 0.0057, acc: 0.7924
+
+Epoch 15/31
+----------
+train loss: 0.0010, acc: 0.9536
+val loss: 0.0054, acc: 0.8050
+
+Epoch 16/31
+----------
+train loss: 0.0011, acc: 0.9491
+val loss: 0.0055, acc: 0.8046
+
+Epoch 17/31
+----------
+train loss: 0.0011, acc: 0.9522
+val loss: 0.0062, acc: 0.7910
+
+Epoch 18/31
+----------
+train loss: 0.0011, acc: 0.9530
+val loss: 0.0059, acc: 0.7813
+
+Epoch 19/31
+----------
+train loss: 0.0010, acc: 0.9578
+val loss: 0.0067, acc: 0.7689
+
+Epoch 20/31
+----------
+train loss: 0.0011, acc: 0.9512
+val loss: 0.0061, acc: 0.7799
+
+Epoch 21/31
+----------
+train loss: 0.0010, acc: 0.9573
+val loss: 0.0058, acc: 0.7848
+
+Epoch 22/31
+----------
+train loss: 0.0010, acc: 0.9558
+val loss: 0.0065, acc: 0.7842
+
+Epoch 23/31
+----------
+train loss: 0.0010, acc: 0.9552
+val loss: 0.0063, acc: 0.7899
+
+Epoch 24/31
+----------
+train loss: 0.0010, acc: 0.9541
+val loss: 0.0055, acc: 0.7954
+
+Epoch 25/31
+----------
+train loss: 0.0010, acc: 0.9549
+val loss: 0.0057, acc: 0.8015
+
+Epoch 26/31
+----------
+train loss: 0.0011, acc: 0.9511
+val loss: 0.0065, acc: 0.7711
+
+Epoch 27/31
+----------
+train loss: 0.0009, acc: 0.9590
+val loss: 0.0053, acc: 0.8061
+
+Epoch 28/31
+----------
+train loss: 0.0010, acc: 0.9553
+val loss: 0.0057, acc: 0.7914
+
+Epoch 29/31
+----------
+train loss: 0.0010, acc: 0.9556
+val loss: 0.0054, acc: 0.8088
+
+Epoch 30/31
+----------
+train loss: 0.0010, acc: 0.9575
+val loss: 0.0054, acc: 0.8023
+
+Epoch 31/31
+----------
+train loss: 0.0010, acc: 0.9556
+val loss: 0.0057, acc: 0.7953
+
+Training complete in 29m 2s
+
+##### Computing downcycle phase #####
+
+Epoch 1/31
+----------
+train loss: 0.0010, acc: 0.9564
+val loss: 0.0063, acc: 0.7828
+
+Epoch 2/31
+----------
+train loss: 0.0010, acc: 0.9565
+val loss: 0.0051, acc: 0.8078
+
+Epoch 3/31
+----------
+train loss: 0.0009, acc: 0.9604
+val loss: 0.0052, acc: 0.8157
+
+Epoch 4/31
+----------
+train loss: 0.0009, acc: 0.9628
+val loss: 0.0056, acc: 0.8001
+
+Epoch 5/31
+----------
+train loss: 0.0009, acc: 0.9628
+val loss: 0.0055, acc: 0.8144
+
+Epoch 6/31
+----------
+train loss: 0.0009, acc: 0.9622
+val loss: 0.0064, acc: 0.7769
+
+Epoch 7/31
+----------
+train loss: 0.0008, acc: 0.9637
+val loss: 0.0061, acc: 0.7982
+
+Epoch 8/31
+----------
+train loss: 0.0008, acc: 0.9644
+val loss: 0.0064, acc: 0.7892
+
+Epoch 9/31
+----------
+train loss: 0.0008, acc: 0.9665
+val loss: 0.0067, acc: 0.7829
+
+Epoch 10/31
+----------
+train loss: 0.0008, acc: 0.9658
+val loss: 0.0057, acc: 0.8115
+
+Epoch 11/31
+----------
+train loss: 0.0008, acc: 0.9654
+val loss: 0.0061, acc: 0.7967
+
+Epoch 12/31
+----------
+train loss: 0.0007, acc: 0.9700
+val loss: 0.0055, acc: 0.8119
+
+Epoch 13/31
+----------
+train loss: 0.0007, acc: 0.9674
+val loss: 0.0058, acc: 0.8003
+
+Epoch 14/31
+----------
+train loss: 0.0007, acc: 0.9692
+val loss: 0.0056, acc: 0.8100
+
+Epoch 15/31
+----------
+train loss: 0.0007, acc: 0.9717
+val loss: 0.0067, acc: 0.7745
+
+Epoch 16/31
+----------
+train loss: 0.0007, acc: 0.9698
+val loss: 0.0054, acc: 0.8119
+
+Epoch 17/31
+----------
+train loss: 0.0006, acc: 0.9732
+val loss: 0.0065, acc: 0.7900
+
+Epoch 18/31
+----------
+train loss: 0.0006, acc: 0.9735
+val loss: 0.0053, acc: 0.8146
+
+Epoch 19/31
+----------
+train loss: 0.0006, acc: 0.9765
+val loss: 0.0053, acc: 0.8181
+
+Epoch 20/31
+----------
+train loss: 0.0005, acc: 0.9770
+val loss: 0.0057, acc: 0.8107
+
+Epoch 21/31
+----------
+train loss: 0.0005, acc: 0.9768
+val loss: 0.0051, acc: 0.8278
+
+Epoch 22/31
+----------
+train loss: 0.0005, acc: 0.9805
+val loss: 0.0049, acc: 0.8317
+
+Epoch 23/31
+----------
+train loss: 0.0004, acc: 0.9826
+val loss: 0.0061, acc: 0.8081
+
+Epoch 24/31
+----------
+train loss: 0.0003, acc: 0.9856
+val loss: 0.0052, acc: 0.8273
+
+Epoch 25/31
+----------
+train loss: 0.0004, acc: 0.9850
+val loss: 0.0053, acc: 0.8218
+
+Epoch 26/31
+----------
+train loss: 0.0003, acc: 0.9875
+val loss: 0.0045, acc: 0.8461
+
+Epoch 27/31
+----------
+train loss: 0.0002, acc: 0.9944
+val loss: 0.0043, acc: 0.8539
+
+Epoch 28/31
+----------
+train loss: 0.0001, acc: 0.9984
+val loss: 0.0038, acc: 0.8673
+
+Epoch 29/31
+----------
+train loss: 0.0000, acc: 0.9998
+val loss: 0.0035, acc: 0.8750
+
+Epoch 30/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0033, acc: 0.8809
+
+Epoch 31/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0032, acc: 0.8810
+
+Training complete in 28m 60s
+
+##### Computing annealing phase #####
+
+Epoch 1/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8835
+
+Epoch 2/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8836
+
+Epoch 3/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8832
+
+Epoch 4/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8843
+
+Epoch 5/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8846
+
+Epoch 6/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8842
+
+Epoch 7/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8857
+
+Training complete in 6m 33s
+
+All three phases done. Concatenating data.
+lrmin0.01_lrmax0.1_mmin0.85_mmax0.95_pct0.1_e70
+train loss: 1.3616717308759689e-05, val loss: 0.00305310643017292, train acc: 1.0, val_acc:0.8857
+##### Computing upcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0127, acc: 0.3989
+val loss: 0.0107, acc: 0.5038
+
+Epoch 2/40
+----------
+train loss: 0.0087, acc: 0.5961
+val loss: 0.0083, acc: 0.6194
+
+Epoch 3/40
+----------
+train loss: 0.0067, acc: 0.7003
+val loss: 0.0074, acc: 0.6588
+
+Epoch 4/40
+----------
+train loss: 0.0053, acc: 0.7615
+val loss: 0.0062, acc: 0.7277
+
+Epoch 5/40
+----------
+train loss: 0.0043, acc: 0.8104
+val loss: 0.0071, acc: 0.7066
+
+Epoch 6/40
+----------
+train loss: 0.0034, acc: 0.8517
+val loss: 0.0061, acc: 0.7453
+
+Epoch 7/40
+----------
+train loss: 0.0026, acc: 0.8852
+val loss: 0.0071, acc: 0.7277
+
+Epoch 8/40
+----------
+train loss: 0.0021, acc: 0.9050
+val loss: 0.0076, acc: 0.7180
+
+Epoch 9/40
+----------
+train loss: 0.0016, acc: 0.9294
+val loss: 0.0082, acc: 0.7020
+
+Epoch 10/40
+----------
+train loss: 0.0013, acc: 0.9399
+val loss: 0.0094, acc: 0.7094
+
+Epoch 11/40
+----------
+train loss: 0.0012, acc: 0.9476
+val loss: 0.0064, acc: 0.7764
+
+Epoch 12/40
+----------
+train loss: 0.0009, acc: 0.9630
+val loss: 0.0073, acc: 0.7602
+
+Epoch 13/40
+----------
+train loss: 0.0009, acc: 0.9631
+val loss: 0.0076, acc: 0.7637
+
+Epoch 14/40
+----------
+train loss: 0.0008, acc: 0.9673
+val loss: 0.0062, acc: 0.7835
+
+Epoch 15/40
+----------
+train loss: 0.0006, acc: 0.9754
+val loss: 0.0076, acc: 0.7714
+
+Epoch 16/40
+----------
+train loss: 0.0005, acc: 0.9779
+val loss: 0.0075, acc: 0.7680
+
+Epoch 17/40
+----------
+train loss: 0.0007, acc: 0.9692
+val loss: 0.0069, acc: 0.7827
+
+Epoch 18/40
+----------
+train loss: 0.0006, acc: 0.9757
+val loss: 0.0087, acc: 0.7508
+
+Epoch 19/40
+----------
+train loss: 0.0005, acc: 0.9793
+val loss: 0.0074, acc: 0.7776
+
+Epoch 20/40
+----------
+train loss: 0.0004, acc: 0.9837
+val loss: 0.0077, acc: 0.7736
+
+Epoch 21/40
+----------
+train loss: 0.0005, acc: 0.9759
+val loss: 0.0075, acc: 0.7749
+
+Epoch 22/40
+----------
+train loss: 0.0005, acc: 0.9807
+val loss: 0.0094, acc: 0.7416
+
+Epoch 23/40
+----------
+train loss: 0.0004, acc: 0.9849
+val loss: 0.0077, acc: 0.7708
+
+Epoch 24/40
+----------
+train loss: 0.0005, acc: 0.9796
+val loss: 0.0087, acc: 0.7438
+
+Epoch 25/40
+----------
+train loss: 0.0005, acc: 0.9790
+val loss: 0.0078, acc: 0.7750
+
+Epoch 26/40
+----------
+train loss: 0.0004, acc: 0.9833
+val loss: 0.0070, acc: 0.7887
+
+Epoch 27/40
+----------
+train loss: 0.0003, acc: 0.9884
+val loss: 0.0070, acc: 0.7930
+
+Epoch 28/40
+----------
+train loss: 0.0002, acc: 0.9920
+val loss: 0.0067, acc: 0.7970
+
+Epoch 29/40
+----------
+train loss: 0.0002, acc: 0.9901
+val loss: 0.0071, acc: 0.7942
+
+Epoch 30/40
+----------
+train loss: 0.0004, acc: 0.9848
+val loss: 0.0085, acc: 0.7696
+
+Epoch 31/40
+----------
+train loss: 0.0006, acc: 0.9753
+val loss: 0.0096, acc: 0.7310
+
+Epoch 32/40
+----------
+train loss: 0.0005, acc: 0.9789
+val loss: 0.0072, acc: 0.7761
+
+Epoch 33/40
+----------
+train loss: 0.0003, acc: 0.9890
+val loss: 0.0064, acc: 0.8107
+
+Epoch 34/40
+----------
+train loss: 0.0003, acc: 0.9900
+val loss: 0.0065, acc: 0.8047
+
+Epoch 35/40
+----------
+train loss: 0.0001, acc: 0.9953
+val loss: 0.0062, acc: 0.8082
+
+Epoch 36/40
+----------
+train loss: 0.0001, acc: 0.9957
+val loss: 0.0067, acc: 0.8065
+
+Epoch 37/40
+----------
+train loss: 0.0003, acc: 0.9881
+val loss: 0.0088, acc: 0.7604
+
+Epoch 38/40
+----------
+train loss: 0.0007, acc: 0.9687
+val loss: 0.0072, acc: 0.7750
+
+Epoch 39/40
+----------
+train loss: 0.0004, acc: 0.9817
+val loss: 0.0080, acc: 0.7660
+
+Epoch 40/40
+----------
+train loss: 0.0003, acc: 0.9869
+val loss: 0.0065, acc: 0.8024
+
+Training complete in 37m 30s
+
+##### Computing downcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0003, acc: 0.9888
+val loss: 0.0065, acc: 0.8067
+
+Epoch 2/40
+----------
+train loss: 0.0001, acc: 0.9949
+val loss: 0.0054, acc: 0.8313
+
+Epoch 3/40
+----------
+train loss: 0.0000, acc: 0.9991
+val loss: 0.0051, acc: 0.8335
+
+Epoch 4/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8432
+
+Epoch 5/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0049, acc: 0.8446
+
+Epoch 6/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0048, acc: 0.8455
+
+Epoch 7/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0046, acc: 0.8474
+
+Epoch 8/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0045, acc: 0.8462
+
+Epoch 9/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8470
+
+Epoch 10/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8475
+
+Epoch 11/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0044, acc: 0.8462
+
+Epoch 12/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8468
+
+Epoch 13/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8478
+
+Epoch 14/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0043, acc: 0.8471
+
+Epoch 15/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8482
+
+Epoch 16/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8480
+
+Epoch 17/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8475
+
+Epoch 18/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8488
+
+Epoch 19/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0042, acc: 0.8479
+
+Epoch 20/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8488
+
+Epoch 21/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8481
+
+Epoch 22/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8486
+
+Epoch 23/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8491
+
+Epoch 24/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8491
+
+Epoch 25/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8482
+
+Epoch 26/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8496
+
+Epoch 27/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8482
+
+Epoch 28/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8482
+
+Epoch 29/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8500
+
+Epoch 30/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8503
+
+Epoch 31/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8493
+
+Epoch 32/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8493
+
+Epoch 33/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8485
+
+Epoch 34/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8494
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8493
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8497
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8495
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8488
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8490
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8488
+
+Training complete in 37m 30s
+
+##### Computing annealing phase #####
+
+Epoch 1/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8506
+
+Epoch 2/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8506
+
+Epoch 3/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8493
+
+Epoch 4/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8494
+
+Epoch 5/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8501
+
+Epoch 6/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8485
+
+Epoch 7/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8493
+
+Epoch 8/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0041, acc: 0.8490
+
+Epoch 9/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0040, acc: 0.8487
+
+Training complete in 8m 26s
+
+All three phases done. Concatenating data.
+lrmin0.001_lrmax0.01_mmin0.9_mmax0.9_pct0.1_e90
+train loss: 9.145146713126451e-06, val loss: 0.004002140149474144, train acc: 1.0, val_acc:0.8487
+##### Computing upcycle phase #####
+
+Epoch 1/31
+----------
+train loss: 0.0101, acc: 0.5293
+val loss: 0.0078, acc: 0.6544
+
+Epoch 2/31
+----------
+train loss: 0.0061, acc: 0.7266
+val loss: 0.0063, acc: 0.7224
+
+Epoch 3/31
+----------
+train loss: 0.0046, acc: 0.7954
+val loss: 0.0064, acc: 0.7337
+
+Epoch 4/31
+----------
+train loss: 0.0037, acc: 0.8355
+val loss: 0.0056, acc: 0.7634
+
+Epoch 5/31
+----------
+train loss: 0.0030, acc: 0.8667
+val loss: 0.0065, acc: 0.7360
+
+Epoch 6/31
+----------
+train loss: 0.0025, acc: 0.8865
+val loss: 0.0056, acc: 0.7686
+
+Epoch 7/31
+----------
+train loss: 0.0020, acc: 0.9093
+val loss: 0.0051, acc: 0.7958
+
+Epoch 8/31
+----------
+train loss: 0.0017, acc: 0.9223
+val loss: 0.0056, acc: 0.7880
+
+Epoch 9/31
+----------
+train loss: 0.0015, acc: 0.9320
+val loss: 0.0052, acc: 0.8007
+
+Epoch 10/31
+----------
+train loss: 0.0014, acc: 0.9381
+val loss: 0.0054, acc: 0.7968
+
+Epoch 11/31
+----------
+train loss: 0.0013, acc: 0.9409
+val loss: 0.0069, acc: 0.7622
+
+Epoch 12/31
+----------
+train loss: 0.0012, acc: 0.9459
+val loss: 0.0053, acc: 0.8063
+
+Epoch 13/31
+----------
+train loss: 0.0012, acc: 0.9486
+val loss: 0.0064, acc: 0.7762
+
+Epoch 14/31
+----------
+train loss: 0.0012, acc: 0.9476
+val loss: 0.0067, acc: 0.7599
+
+Epoch 15/31
+----------
+train loss: 0.0013, acc: 0.9442
+val loss: 0.0054, acc: 0.8009
+
+Epoch 16/31
+----------
+train loss: 0.0012, acc: 0.9457
+val loss: 0.0055, acc: 0.7965
+
+Epoch 17/31
+----------
+train loss: 0.0013, acc: 0.9449
+val loss: 0.0057, acc: 0.7897
+
+Epoch 18/31
+----------
+train loss: 0.0012, acc: 0.9441
+val loss: 0.0052, acc: 0.8047
+
+Epoch 19/31
+----------
+train loss: 0.0013, acc: 0.9435
+val loss: 0.0053, acc: 0.8051
+
+Epoch 20/31
+----------
+train loss: 0.0013, acc: 0.9445
+val loss: 0.0061, acc: 0.7809
+
+Epoch 21/31
+----------
+train loss: 0.0013, acc: 0.9412
+val loss: 0.0054, acc: 0.7962
+
+Epoch 22/31
+----------
+train loss: 0.0014, acc: 0.9393
+val loss: 0.0049, acc: 0.8146
+
+Epoch 23/31
+----------
+train loss: 0.0014, acc: 0.9396
+val loss: 0.0052, acc: 0.8012
+
+Epoch 24/31
+----------
+train loss: 0.0014, acc: 0.9366
+val loss: 0.0057, acc: 0.7961
+
+Epoch 25/31
+----------
+train loss: 0.0014, acc: 0.9372
+val loss: 0.0062, acc: 0.7752
+
+Epoch 26/31
+----------
+train loss: 0.0014, acc: 0.9393
+val loss: 0.0055, acc: 0.7885
+
+Epoch 27/31
+----------
+train loss: 0.0015, acc: 0.9356
+val loss: 0.0054, acc: 0.7954
+
+Epoch 28/31
+----------
+train loss: 0.0015, acc: 0.9339
+val loss: 0.0054, acc: 0.7948
+
+Epoch 29/31
+----------
+train loss: 0.0015, acc: 0.9350
+val loss: 0.0058, acc: 0.7796
+
+Epoch 30/31
+----------
+train loss: 0.0015, acc: 0.9338
+val loss: 0.0058, acc: 0.7873
+
+Epoch 31/31
+----------
+train loss: 0.0016, acc: 0.9297
+val loss: 0.0055, acc: 0.7835
+
+Training complete in 29m 2s
+
+##### Computing downcycle phase #####
+
+Epoch 1/31
+----------
+train loss: 0.0015, acc: 0.9338
+val loss: 0.0058, acc: 0.7896
+
+Epoch 2/31
+----------
+train loss: 0.0014, acc: 0.9396
+val loss: 0.0049, acc: 0.8185
+
+Epoch 3/31
+----------
+train loss: 0.0013, acc: 0.9425
+val loss: 0.0059, acc: 0.7912
+
+Epoch 4/31
+----------
+train loss: 0.0012, acc: 0.9464
+val loss: 0.0058, acc: 0.7834
+
+Epoch 5/31
+----------
+train loss: 0.0012, acc: 0.9488
+val loss: 0.0051, acc: 0.8121
+
+Epoch 6/31
+----------
+train loss: 0.0011, acc: 0.9507
+val loss: 0.0058, acc: 0.7905
+
+Epoch 7/31
+----------
+train loss: 0.0011, acc: 0.9522
+val loss: 0.0056, acc: 0.8006
+
+Epoch 8/31
+----------
+train loss: 0.0010, acc: 0.9558
+val loss: 0.0058, acc: 0.7970
+
+Epoch 9/31
+----------
+train loss: 0.0009, acc: 0.9610
+val loss: 0.0048, acc: 0.8236
+
+Epoch 10/31
+----------
+train loss: 0.0009, acc: 0.9607
+val loss: 0.0049, acc: 0.8201
+
+Epoch 11/31
+----------
+train loss: 0.0008, acc: 0.9641
+val loss: 0.0051, acc: 0.8115
+
+Epoch 12/31
+----------
+train loss: 0.0008, acc: 0.9645
+val loss: 0.0052, acc: 0.8111
+
+Epoch 13/31
+----------
+train loss: 0.0007, acc: 0.9703
+val loss: 0.0046, acc: 0.8342
+
+Epoch 14/31
+----------
+train loss: 0.0006, acc: 0.9730
+val loss: 0.0049, acc: 0.8276
+
+Epoch 15/31
+----------
+train loss: 0.0007, acc: 0.9718
+val loss: 0.0050, acc: 0.8245
+
+Epoch 16/31
+----------
+train loss: 0.0006, acc: 0.9748
+val loss: 0.0045, acc: 0.8387
+
+Epoch 17/31
+----------
+train loss: 0.0004, acc: 0.9805
+val loss: 0.0055, acc: 0.8185
+
+Epoch 18/31
+----------
+train loss: 0.0004, acc: 0.9816
+val loss: 0.0055, acc: 0.8177
+
+Epoch 19/31
+----------
+train loss: 0.0004, acc: 0.9818
+val loss: 0.0049, acc: 0.8348
+
+Epoch 20/31
+----------
+train loss: 0.0003, acc: 0.9878
+val loss: 0.0049, acc: 0.8385
+
+Epoch 21/31
+----------
+train loss: 0.0003, acc: 0.9904
+val loss: 0.0053, acc: 0.8280
+
+Epoch 22/31
+----------
+train loss: 0.0002, acc: 0.9932
+val loss: 0.0045, acc: 0.8483
+
+Epoch 23/31
+----------
+train loss: 0.0001, acc: 0.9953
+val loss: 0.0045, acc: 0.8570
+
+Epoch 24/31
+----------
+train loss: 0.0001, acc: 0.9978
+val loss: 0.0039, acc: 0.8655
+
+Epoch 25/31
+----------
+train loss: 0.0000, acc: 0.9998
+val loss: 0.0035, acc: 0.8790
+
+Epoch 26/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0033, acc: 0.8826
+
+Epoch 27/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0033, acc: 0.8829
+
+Epoch 28/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8857
+
+Epoch 29/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8874
+
+Epoch 30/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8869
+
+Epoch 31/31
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8881
+
+Training complete in 28m 59s
+
+##### Computing annealing phase #####
+
+Epoch 1/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8889
+
+Epoch 2/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8890
+
+Epoch 3/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8898
+
+Epoch 4/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0029, acc: 0.8898
+
+Epoch 5/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8884
+
+Epoch 6/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0030, acc: 0.8900
+
+Epoch 7/7
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0029, acc: 0.8893
+
+Training complete in 6m 33s
+
+All three phases done. Concatenating data.
+lrmin0.01_lrmax0.1_mmin0.9_mmax0.9_pct0.1_e70
+train loss: 1.3993995683267712e-05, val loss: 0.0029329785212874413, train acc: 1.0, val_acc:0.8893
+##### Computing upcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0116, acc: 0.4515
+val loss: 0.0113, acc: 0.5186
+
+Epoch 2/40
+----------
+train loss: 0.0071, acc: 0.6782
+val loss: 0.0079, acc: 0.6532
+
+Epoch 3/40
+----------
+train loss: 0.0052, acc: 0.7630
+val loss: 0.0061, acc: 0.7321
+
+Epoch 4/40
+----------
+train loss: 0.0042, acc: 0.8125
+val loss: 0.0053, acc: 0.7679
+
+Epoch 5/40
+----------
+train loss: 0.0034, acc: 0.8480
+val loss: 0.0057, acc: 0.7667
+
+Epoch 6/40
+----------
+train loss: 0.0029, acc: 0.8695
+val loss: 0.0055, acc: 0.7752
+
+Epoch 7/40
+----------
+train loss: 0.0023, acc: 0.8955
+val loss: 0.0054, acc: 0.7905
+
+Epoch 8/40
+----------
+train loss: 0.0020, acc: 0.9090
+val loss: 0.0049, acc: 0.8064
+
+Epoch 9/40
+----------
+train loss: 0.0017, acc: 0.9253
+val loss: 0.0053, acc: 0.7973
+
+Epoch 10/40
+----------
+train loss: 0.0014, acc: 0.9364
+val loss: 0.0058, acc: 0.7864
+
+Epoch 11/40
+----------
+train loss: 0.0012, acc: 0.9450
+val loss: 0.0048, acc: 0.8163
+
+Epoch 12/40
+----------
+train loss: 0.0012, acc: 0.9482
+val loss: 0.0047, acc: 0.8194
+
+Epoch 13/40
+----------
+train loss: 0.0011, acc: 0.9525
+val loss: 0.0062, acc: 0.7834
+
+Epoch 14/40
+----------
+train loss: 0.0011, acc: 0.9505
+val loss: 0.0051, acc: 0.8100
+
+Epoch 15/40
+----------
+train loss: 0.0009, acc: 0.9593
+val loss: 0.0058, acc: 0.7988
+
+Epoch 16/40
+----------
+train loss: 0.0010, acc: 0.9567
+val loss: 0.0073, acc: 0.7687
+
+Epoch 17/40
+----------
+train loss: 0.0009, acc: 0.9589
+val loss: 0.0069, acc: 0.7778
+
+Epoch 18/40
+----------
+train loss: 0.0010, acc: 0.9544
+val loss: 0.0057, acc: 0.7947
+
+Epoch 19/40
+----------
+train loss: 0.0009, acc: 0.9590
+val loss: 0.0062, acc: 0.7883
+
+Epoch 20/40
+----------
+train loss: 0.0010, acc: 0.9575
+val loss: 0.0057, acc: 0.7916
+
+Epoch 21/40
+----------
+train loss: 0.0010, acc: 0.9553
+val loss: 0.0061, acc: 0.7838
+
+Epoch 22/40
+----------
+train loss: 0.0010, acc: 0.9583
+val loss: 0.0050, acc: 0.8033
+
+Epoch 23/40
+----------
+train loss: 0.0010, acc: 0.9565
+val loss: 0.0061, acc: 0.7818
+
+Epoch 24/40
+----------
+train loss: 0.0009, acc: 0.9598
+val loss: 0.0057, acc: 0.7894
+
+Epoch 25/40
+----------
+train loss: 0.0010, acc: 0.9562
+val loss: 0.0052, acc: 0.8092
+
+Epoch 26/40
+----------
+train loss: 0.0009, acc: 0.9604
+val loss: 0.0067, acc: 0.7757
+
+Epoch 27/40
+----------
+train loss: 0.0010, acc: 0.9578
+val loss: 0.0060, acc: 0.7869
+
+Epoch 28/40
+----------
+train loss: 0.0010, acc: 0.9583
+val loss: 0.0068, acc: 0.7670
+
+Epoch 29/40
+----------
+train loss: 0.0010, acc: 0.9580
+val loss: 0.0063, acc: 0.7776
+
+Epoch 30/40
+----------
+train loss: 0.0010, acc: 0.9582
+val loss: 0.0059, acc: 0.7906
+
+Epoch 31/40
+----------
+train loss: 0.0010, acc: 0.9563
+val loss: 0.0079, acc: 0.7493
+
+Epoch 32/40
+----------
+train loss: 0.0009, acc: 0.9606
+val loss: 0.0053, acc: 0.8190
+
+Epoch 33/40
+----------
+train loss: 0.0010, acc: 0.9575
+val loss: 0.0063, acc: 0.7875
+
+Epoch 34/40
+----------
+train loss: 0.0010, acc: 0.9571
+val loss: 0.0050, acc: 0.8080
+
+Epoch 35/40
+----------
+train loss: 0.0010, acc: 0.9557
+val loss: 0.0052, acc: 0.8104
+
+Epoch 36/40
+----------
+train loss: 0.0010, acc: 0.9583
+val loss: 0.0060, acc: 0.7933
+
+Epoch 37/40
+----------
+train loss: 0.0010, acc: 0.9579
+val loss: 0.0065, acc: 0.7882
+
+Epoch 38/40
+----------
+train loss: 0.0009, acc: 0.9612
+val loss: 0.0062, acc: 0.7822
+
+Epoch 39/40
+----------
+train loss: 0.0010, acc: 0.9561
+val loss: 0.0061, acc: 0.7851
+
+Epoch 40/40
+----------
+train loss: 0.0009, acc: 0.9594
+val loss: 0.0066, acc: 0.7736
+
+Training complete in 37m 27s
+
+##### Computing downcycle phase #####
+
+Epoch 1/40
+----------
+train loss: 0.0009, acc: 0.9585
+val loss: 0.0052, acc: 0.8107
+
+Epoch 2/40
+----------
+train loss: 0.0009, acc: 0.9594
+val loss: 0.0059, acc: 0.7845
+
+Epoch 3/40
+----------
+train loss: 0.0009, acc: 0.9618
+val loss: 0.0059, acc: 0.7941
+
+Epoch 4/40
+----------
+train loss: 0.0009, acc: 0.9616
+val loss: 0.0056, acc: 0.8056
+
+Epoch 5/40
+----------
+train loss: 0.0008, acc: 0.9655
+val loss: 0.0067, acc: 0.7714
+
+Epoch 6/40
+----------
+train loss: 0.0009, acc: 0.9624
+val loss: 0.0054, acc: 0.8099
+
+Epoch 7/40
+----------
+train loss: 0.0008, acc: 0.9656
+val loss: 0.0060, acc: 0.7893
+
+Epoch 8/40
+----------
+train loss: 0.0008, acc: 0.9650
+val loss: 0.0052, acc: 0.8136
+
+Epoch 9/40
+----------
+train loss: 0.0008, acc: 0.9656
+val loss: 0.0052, acc: 0.8222
+
+Epoch 10/40
+----------
+train loss: 0.0008, acc: 0.9665
+val loss: 0.0062, acc: 0.7928
+
+Epoch 11/40
+----------
+train loss: 0.0008, acc: 0.9652
+val loss: 0.0057, acc: 0.7953
+
+Epoch 12/40
+----------
+train loss: 0.0007, acc: 0.9688
+val loss: 0.0052, acc: 0.8192
+
+Epoch 13/40
+----------
+train loss: 0.0007, acc: 0.9689
+val loss: 0.0058, acc: 0.8001
+
+Epoch 14/40
+----------
+train loss: 0.0008, acc: 0.9663
+val loss: 0.0053, acc: 0.8095
+
+Epoch 15/40
+----------
+train loss: 0.0007, acc: 0.9728
+val loss: 0.0054, acc: 0.8190
+
+Epoch 16/40
+----------
+train loss: 0.0007, acc: 0.9709
+val loss: 0.0055, acc: 0.8084
+
+Epoch 17/40
+----------
+train loss: 0.0006, acc: 0.9743
+val loss: 0.0052, acc: 0.8160
+
+Epoch 18/40
+----------
+train loss: 0.0006, acc: 0.9741
+val loss: 0.0056, acc: 0.8075
+
+Epoch 19/40
+----------
+train loss: 0.0006, acc: 0.9757
+val loss: 0.0062, acc: 0.8032
+
+Epoch 20/40
+----------
+train loss: 0.0006, acc: 0.9732
+val loss: 0.0059, acc: 0.8011
+
+Epoch 21/40
+----------
+train loss: 0.0006, acc: 0.9726
+val loss: 0.0051, acc: 0.8251
+
+Epoch 22/40
+----------
+train loss: 0.0005, acc: 0.9818
+val loss: 0.0048, acc: 0.8378
+
+Epoch 23/40
+----------
+train loss: 0.0004, acc: 0.9822
+val loss: 0.0056, acc: 0.8160
+
+Epoch 24/40
+----------
+train loss: 0.0005, acc: 0.9790
+val loss: 0.0055, acc: 0.8188
+
+Epoch 25/40
+----------
+train loss: 0.0005, acc: 0.9802
+val loss: 0.0054, acc: 0.8245
+
+Epoch 26/40
+----------
+train loss: 0.0005, acc: 0.9782
+val loss: 0.0052, acc: 0.8222
+
+Epoch 27/40
+----------
+train loss: 0.0003, acc: 0.9868
+val loss: 0.0047, acc: 0.8482
+
+Epoch 28/40
+----------
+train loss: 0.0002, acc: 0.9918
+val loss: 0.0047, acc: 0.8465
+
+Epoch 29/40
+----------
+train loss: 0.0002, acc: 0.9940
+val loss: 0.0045, acc: 0.8514
+
+Epoch 30/40
+----------
+train loss: 0.0002, acc: 0.9933
+val loss: 0.0051, acc: 0.8356
+
+Epoch 31/40
+----------
+train loss: 0.0003, acc: 0.9887
+val loss: 0.0051, acc: 0.8325
+
+Epoch 32/40
+----------
+train loss: 0.0003, acc: 0.9886
+val loss: 0.0052, acc: 0.8276
+
+Epoch 33/40
+----------
+train loss: 0.0002, acc: 0.9932
+val loss: 0.0044, acc: 0.8580
+
+Epoch 34/40
+----------
+train loss: 0.0001, acc: 0.9979
+val loss: 0.0041, acc: 0.8679
+
+Epoch 35/40
+----------
+train loss: 0.0000, acc: 0.9998
+val loss: 0.0035, acc: 0.8814
+
+Epoch 36/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0034, acc: 0.8843
+
+Epoch 37/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0032, acc: 0.8843
+
+Epoch 38/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0032, acc: 0.8861
+
+Epoch 39/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0032, acc: 0.8857
+
+Epoch 40/40
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8857
+
+Training complete in 37m 24s
+
+##### Computing annealing phase #####
+
+Epoch 1/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8868
+
+Epoch 2/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8872
+
+Epoch 3/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8881
+
+Epoch 4/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8867
+
+Epoch 5/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8869
+
+Epoch 6/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8876
+
+Epoch 7/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8875
+
+Epoch 8/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8877
+
+Epoch 9/9
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0031, acc: 0.8866
+
+Training complete in 8m 25s
+
+All three phases done. Concatenating data.
+lrmin0.001_lrmax0.1_mmin0.85_mmax0.95_pct0.1_e90
+train loss: 1.1494448692537844e-05, val loss: 0.0031093667522072792, train acc: 1.0, val_acc:0.8866
+
+
+
+----------- Standard -------------------
+
+(ml) roman@reverie:~/Documents/super-convergence-experiments/src$ python train_standard.py
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch 1/350
+----------
+train loss: 0.0126, acc: 0.4053
+val loss: 0.0099, acc: 0.5418
+
+Epoch 2/350
+----------
+train loss: 0.0086, acc: 0.5977
+val loss: 0.0081, acc: 0.6303
+
+Epoch 3/350
+----------
+train loss: 0.0067, acc: 0.6955
+val loss: 0.0079, acc: 0.6434
+
+Epoch 4/350
+----------
+train loss: 0.0054, acc: 0.7619
+val loss: 0.0070, acc: 0.7010
+
+Epoch 5/350
+----------
+train loss: 0.0042, acc: 0.8122
+val loss: 0.0064, acc: 0.7218
+
+Epoch 6/350
+----------
+train loss: 0.0033, acc: 0.8587
+val loss: 0.0063, acc: 0.7320
+
+Epoch 7/350
+----------
+train loss: 0.0023, acc: 0.9031
+val loss: 0.0075, acc: 0.7089
+
+Epoch 8/350
+----------
+train loss: 0.0016, acc: 0.9383
+val loss: 0.0065, acc: 0.7462
+
+Epoch 9/350
+----------
+train loss: 0.0010, acc: 0.9630
+val loss: 0.0074, acc: 0.7272
+
+Epoch 10/350
+----------
+train loss: 0.0006, acc: 0.9782
+val loss: 0.0078, acc: 0.7304
+
+Epoch 11/350
+----------
+train loss: 0.0004, acc: 0.9895
+val loss: 0.0069, acc: 0.7623
+
+Epoch 12/350
+----------
+train loss: 0.0002, acc: 0.9962
+val loss: 0.0067, acc: 0.7704
+
+Epoch 13/350
+----------
+train loss: 0.0001, acc: 0.9993
+val loss: 0.0066, acc: 0.7753
+
+Epoch 14/350
+----------
+train loss: 0.0000, acc: 0.9999
+val loss: 0.0065, acc: 0.7811
+
+Epoch 15/350
+----------
+train loss: 0.0000, acc: 0.9999
+val loss: 0.0067, acc: 0.7766
+
+Epoch 16/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0064, acc: 0.7833
+
+Epoch 17/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7830
+
+Epoch 18/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7815
+
+Epoch 19/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7809
+
+Epoch 20/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7818
+
+Epoch 21/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7832
+
+Epoch 22/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7832
+
+Epoch 23/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7842
+
+Epoch 24/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7843
+
+Epoch 25/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7839
+
+Epoch 26/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7848
+
+Epoch 27/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7803
+
+Epoch 28/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7817
+
+Epoch 29/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7811
+
+Epoch 30/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7833
+
+Epoch 31/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7822
+
+Epoch 32/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7838
+
+Epoch 33/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7856
+
+Epoch 34/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7841
+
+Epoch 35/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7825
+
+Epoch 36/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7823
+
+Epoch 37/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7824
+
+Epoch 38/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7829
+
+Epoch 39/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7823
+
+Epoch 40/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7840
+
+Epoch 41/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0069, acc: 0.7832
+
+Epoch 42/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7833
+
+Epoch 43/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7824
+
+Epoch 44/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7851
+
+Epoch 45/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7838
+
+Epoch 46/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7845
+
+Epoch 47/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7813
+
+Epoch 48/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7834
+
+Epoch 49/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7837
+
+Epoch 50/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0069, acc: 0.7827
+
+Epoch 51/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7818
+
+Epoch 52/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7810
+
+Epoch 53/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7820
+
+Epoch 54/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7816
+
+Epoch 55/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7814
+
+Epoch 56/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7822
+
+Epoch 57/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7822
+
+Epoch 58/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7828
+
+Epoch 59/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7815
+
+Epoch 60/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7823
+
+Epoch 61/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7831
+
+Epoch 62/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7835
+
+Epoch 63/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7836
+
+Epoch 64/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7825
+
+Epoch 65/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7824
+
+Epoch 66/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7830
+
+Epoch 67/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7824
+
+Epoch 68/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7826
+
+Epoch 69/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7826
+
+Epoch 70/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7819
+
+Epoch 71/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7822
+
+Epoch 72/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7831
+
+Epoch 73/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7828
+
+Epoch 74/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7818
+
+Epoch 75/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7834
+
+Epoch 76/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7818
+
+Epoch 77/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7823
+
+Epoch 78/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7811
+
+Epoch 79/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7815
+
+Epoch 80/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7816
+
+Epoch 81/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7817
+
+Epoch 82/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7819
+
+Epoch 83/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7810
+
+Epoch 84/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7812
+
+Epoch 85/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7801
+
+Epoch 86/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7819
+
+Epoch 87/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7800
+
+Epoch 88/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7805
+
+Epoch 89/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7810
+
+Epoch 90/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7809
+
+Epoch 91/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7814
+
+Epoch 92/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7813
+
+Epoch 93/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7830
+
+Epoch 94/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7823
+
+Epoch 95/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7823
+
+Epoch 96/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7812
+
+Epoch 97/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7809
+
+Epoch 98/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7802
+
+Epoch 99/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7808
+
+Epoch 100/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7802
+
+Epoch 101/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7806
+
+Epoch 102/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7818
+
+Epoch 103/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7793
+
+Epoch 104/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7812
+
+Epoch 105/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7817
+
+Epoch 106/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7800
+
+Epoch 107/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7799
+
+Epoch 108/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7818
+
+Epoch 109/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7790
+
+Epoch 110/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7800
+
+Epoch 111/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7809
+
+Epoch 112/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7803
+
+Epoch 113/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7809
+
+Epoch 114/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7810
+
+Epoch 115/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7808
+
+Epoch 116/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7784
+
+Epoch 117/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7796
+
+Epoch 118/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7804
+
+Epoch 119/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7803
+
+Epoch 120/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7804
+
+Epoch 121/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7788
+
+Epoch 122/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7772
+
+Epoch 123/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7811
+
+Epoch 124/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7817
+
+Epoch 125/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7802
+
+Epoch 126/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7818
+
+Epoch 127/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7805
+
+Epoch 128/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7817
+
+Epoch 129/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7803
+
+Epoch 130/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7811
+
+Epoch 131/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7801
+
+Epoch 132/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7809
+
+Epoch 133/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7807
+
+Epoch 134/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7809
+
+Epoch 135/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7793
+
+Epoch 136/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0069, acc: 0.7791
+
+Epoch 137/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7797
+
+Epoch 138/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7821
+
+Epoch 139/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7783
+
+Epoch 140/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7797
+
+Epoch 141/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7819
+
+Epoch 142/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7798
+
+Epoch 143/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7808
+
+Epoch 144/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7805
+
+Epoch 145/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7798
+
+Epoch 146/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7791
+
+Epoch 147/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7806
+
+Epoch 148/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7821
+
+Epoch 149/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7791
+
+Epoch 150/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7786
+
+Epoch 151/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7790
+
+Epoch 152/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7795
+
+Epoch 153/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7791
+
+Epoch 154/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7792
+
+Epoch 155/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7798
+
+Epoch 156/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7780
+
+Epoch 157/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7791
+
+Epoch 158/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7788
+
+Epoch 159/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7797
+
+Epoch 160/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7776
+
+Epoch 161/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7788
+
+Epoch 162/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7783
+
+Epoch 163/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7797
+
+Epoch 164/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7786
+
+Epoch 165/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7776
+
+Epoch 166/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7787
+
+Epoch 167/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7787
+
+Epoch 168/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7802
+
+Epoch 169/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7784
+
+Epoch 170/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7796
+
+Epoch 171/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7779
+
+Epoch 172/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 173/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7787
+
+Epoch 174/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7783
+
+Epoch 175/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7781
+
+Epoch 176/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7782
+
+Epoch 177/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7777
+
+Epoch 178/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7783
+
+Epoch 179/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7785
+
+Epoch 180/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7787
+
+Epoch 181/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7779
+
+Epoch 182/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7786
+
+Epoch 183/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7772
+
+Epoch 184/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7805
+
+Epoch 185/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7794
+
+Epoch 186/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7784
+
+Epoch 187/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7790
+
+Epoch 188/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7792
+
+Epoch 189/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7770
+
+Epoch 190/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7782
+
+Epoch 191/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7787
+
+Epoch 192/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7783
+
+Epoch 193/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7783
+
+Epoch 194/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7783
+
+Epoch 195/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7757
+
+Epoch 196/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7779
+
+Epoch 197/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7774
+
+Epoch 198/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7778
+
+Epoch 199/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7794
+
+Epoch 200/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7780
+
+Epoch 201/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7764
+
+Epoch 202/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7768
+
+Epoch 203/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7774
+
+Epoch 204/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7795
+
+Epoch 205/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7777
+
+Epoch 206/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7781
+
+Epoch 207/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7767
+
+Epoch 208/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7769
+
+Epoch 209/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7750
+
+Epoch 210/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7776
+
+Epoch 211/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7773
+
+Epoch 212/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7764
+
+Epoch 213/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7770
+
+Epoch 214/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7781
+
+Epoch 215/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7766
+
+Epoch 216/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 217/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7776
+
+Epoch 218/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7771
+
+Epoch 219/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7768
+
+Epoch 220/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7768
+
+Epoch 221/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7762
+
+Epoch 222/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 223/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7773
+
+Epoch 224/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7767
+
+Epoch 225/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7781
+
+Epoch 226/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7763
+
+Epoch 227/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7762
+
+Epoch 228/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7764
+
+Epoch 229/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7778
+
+Epoch 230/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7779
+
+Epoch 231/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7747
+
+Epoch 232/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7778
+
+Epoch 233/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7777
+
+Epoch 234/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7769
+
+Epoch 235/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7762
+
+Epoch 236/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7760
+
+Epoch 237/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0065, acc: 0.7781
+
+Epoch 238/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7784
+
+Epoch 239/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7773
+
+Epoch 240/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7767
+
+Epoch 241/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7781
+
+Epoch 242/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7784
+
+Epoch 243/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7779
+
+Epoch 244/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7776
+
+Epoch 245/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7749
+
+Epoch 246/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7786
+
+Epoch 247/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7776
+
+Epoch 248/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7751
+
+Epoch 249/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7766
+
+Epoch 250/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7776
+
+Epoch 251/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7758
+
+Epoch 252/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7767
+
+Epoch 253/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7760
+
+Epoch 254/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7755
+
+Epoch 255/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7764
+
+Epoch 256/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7767
+
+Epoch 257/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7744
+
+Epoch 258/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7781
+
+Epoch 259/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7757
+
+Epoch 260/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7766
+
+Epoch 261/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7765
+
+Epoch 262/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7765
+
+Epoch 263/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7748
+
+Epoch 264/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7786
+
+Epoch 265/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7762
+
+Epoch 266/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7771
+
+Epoch 267/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 268/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 269/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7746
+
+Epoch 270/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7743
+
+Epoch 271/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7764
+
+Epoch 272/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7774
+
+Epoch 273/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7777
+
+Epoch 274/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7756
+
+Epoch 275/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7760
+
+Epoch 276/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7773
+
+Epoch 277/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7768
+
+Epoch 278/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7763
+
+Epoch 279/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7748
+
+Epoch 280/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7783
+
+Epoch 281/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7754
+
+Epoch 282/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7771
+
+Epoch 283/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7780
+
+Epoch 284/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7781
+
+Epoch 285/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7772
+
+Epoch 286/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7742
+
+Epoch 287/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7766
+
+Epoch 288/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7753
+
+Epoch 289/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7774
+
+Epoch 290/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7772
+
+Epoch 291/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7760
+
+Epoch 292/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7778
+
+Epoch 293/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7752
+
+Epoch 294/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7743
+
+Epoch 295/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7771
+
+Epoch 296/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7753
+
+Epoch 297/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7740
+
+Epoch 298/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7756
+
+Epoch 299/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7742
+
+Epoch 300/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7766
+
+Epoch 301/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7756
+
+Epoch 302/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7752
+
+Epoch 303/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7765
+
+Epoch 304/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7769
+
+Epoch 305/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7751
+
+Epoch 306/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7765
+
+Epoch 307/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7768
+
+Epoch 308/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7770
+
+Epoch 309/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7762
+
+Epoch 310/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7749
+
+Epoch 311/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7770
+
+Epoch 312/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7774
+
+Epoch 313/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7769
+
+Epoch 314/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7772
+
+Epoch 315/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7767
+
+Epoch 316/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7759
+
+Epoch 317/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7765
+
+Epoch 318/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7773
+
+Epoch 319/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7745
+
+Epoch 320/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7764
+
+Epoch 321/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7769
+
+Epoch 322/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7775
+
+Epoch 323/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7770
+
+Epoch 324/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7745
+
+Epoch 325/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7773
+
+Epoch 326/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7762
+
+Epoch 327/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7737
+
+Epoch 328/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7755
+
+Epoch 329/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7745
+
+Epoch 330/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7761
+
+Epoch 331/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7782
+
+Epoch 332/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7747
+
+Epoch 333/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7767
+
+Epoch 334/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7757
+
+Epoch 335/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7749
+
+Epoch 336/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7779
+
+Epoch 337/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7758
+
+Epoch 338/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7758
+
+Epoch 339/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7777
+
+Epoch 340/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7770
+
+Epoch 341/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7754
+
+Epoch 342/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7753
+
+Epoch 343/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7774
+
+Epoch 344/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7758
+
+Epoch 345/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7781
+
+Epoch 346/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7747
+
+Epoch 347/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0068, acc: 0.7729
+
+Epoch 348/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0067, acc: 0.7784
+
+Epoch 349/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0066, acc: 0.7770
+
+Epoch 350/350
+----------
+train loss: 0.0000, acc: 1.0000
+val loss: 0.0070, acc: 0.7660
+
+Training complete in 328m 13s

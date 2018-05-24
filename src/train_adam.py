@@ -33,8 +33,8 @@ model = resnet.ResNet18()
 if torch.cuda.is_available():
     model.cuda()
 criterion = CrossEntropyLoss()
-optimizer = SGD(model.parameters(), lr=0.001, momentum=0.9, weight_decay=5e-4)
+optimizer = Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), weight_decay=5e-4)
 
 # Training the network
-train_outputs = train_model(model, dset_loaders, dset_sizes, criterion, optimizer, num_epochs=350, verbose=2)
+train_outputs = train_model(model, dset_loaders, dset_sizes, criterion, optimizer, num_epochs=90, verbose=2)
 plot_learning_curves(train_outputs[0], train_outputs[1], train_outputs[2], train_outputs[3], description='standard_training')
