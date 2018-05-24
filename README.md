@@ -43,6 +43,6 @@ $ cd src && python super_convergence.py
 ```
 
 For futher insight into the way of choosing the baseline learning rate, please
-refer to the learning_rate_finder.ipynb Jupyter notebook.
+refer to the ```learning_rate_finder.ipynb``` Jupyter notebook.
 
-For the plots used in the report, please refer to the plotting.ipynb Jupyter notebook.
+For the plots used in the report, please refer to the ```plotting.ipynb``` Jupyter notebook.
